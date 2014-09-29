@@ -43,12 +43,16 @@ public class Chatbot
 	{
 		numberOfChats++;
 	}
-	//don't put methods in methods
+	/**
+	 * checks for input to close app.
+	 * @param input
+	 * @return
+	 */
 	public boolean quitChecker(String input)
 	{
 		boolean okToQuit = false;
 		
-		if(input.equals("bye"))
+		if(input != null && input.equals("bye"))
 		{
 			okToQuit = true;
 		}
