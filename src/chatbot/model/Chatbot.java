@@ -7,6 +7,7 @@ public class Chatbot
 	private String name;
 	private int numberOfChats;
 	private ArrayList<String> memeList;
+	private String contentList;
 	
 	
 	/**
@@ -17,9 +18,10 @@ public class Chatbot
 	{
 		this.name = name;
 		numberOfChats = 0;
-		// this. means talk to the current class
+		contentList = "";
 		memeList = new ArrayList<String>();
 		fillTheMemeList();
+		// this. means talk to the current class
 	}
 
 	public String getName()
@@ -73,15 +75,44 @@ public class Chatbot
 		String processedText = "";
 		incrementChats();
 		
-		if(memeChecker(userText))
+		int randomChoice = (int) (Math.random() * 3);
+		
+		if (randomChoice == 0)
 		{
-			processedText = "hey, you found a meme: " + userText;
-			processedText += " isn't that cool.";
+			if(stringChecker(userText))
+			{
+				processedText = "woah! you write too long.";
+				processedText += "That's right, I know how long you type Mr. " + userText;
+			}
+			else
+			{
+				processedText = "Try to type a little bit longer.";
+			}
+		}
+		else if (randomChoice == 1)
+		{
+			if(contentChecker(userText))
+			{
+				processedText = "You like to talk about nothing?!...";
+			}
+			else
+			{
+				processedText = "Well, talking about something is better than nothing.";
+			}
 		}
 		else
 		{
-			processedText = "Boring, that wasn't a meme";
+			if(memeChecker(userText))
+			{
+				processedText = "hey, you found a meme: " + userText;
+				processedText += " isn't that cool.";
+			}
+			else
+			{
+				processedText = "Boring, that wasn't a meme";
+			}
 		}
+		
 		return processedText;
 	}
 	
@@ -98,6 +129,30 @@ public class Chatbot
 		}
 		
 		return isAMeme;
+	}
+	
+	private boolean stringChecker(String input)
+	{
+		boolean stringTooLong = false;
+		
+		if(input.length() >= 32)
+		{
+			stringTooLong = true;
+		}
+		
+		return stringTooLong;
+	}
+	
+	private boolean contentChecker(String input)
+	{
+		boolean hasContent = false;
+		
+		if(input.contains(contentList))
+		{
+			hasContent = true;
+		}
+		
+		return hasContent;
 	}
 	
 	/**
