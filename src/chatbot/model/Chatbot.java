@@ -11,7 +11,7 @@ public class Chatbot
 	
 	
 	/**
-	 * Creates a Chatbot object with a specified name. Initializes the total chats to 0. Creates and fills the memeList.
+	 * Creates a Chatbot object with a specified name. Initializes the total chats to 0. Creates and fills the memeList. Sets the word for contentList.
 	 * @param name The name of the chatbot.
 	 */
 	public Chatbot(String name)
@@ -24,10 +24,12 @@ public class Chatbot
 		// this. means talk to the current class
 	}
 
+	//returns the name of Chatbot.
 	public String getName()
 	{
 		return name;
 	}
+	
 	/**
 	 * returns the number of chats for this chatbot
 	 * @return the current number of chats.
@@ -36,6 +38,7 @@ public class Chatbot
 	{
 		return numberOfChats;
 	}
+	
 	/**
 	 * Sets chatbot's name.
 	 * @param name the new name of chatbot
@@ -44,6 +47,7 @@ public class Chatbot
 	{
 		this.name = name;
 	}
+	
 	/**
 	 * adds to the number of chats
 	 */
@@ -76,46 +80,48 @@ public class Chatbot
 		incrementChats();
 		
 		int randomChoice = (int) (Math.random() * 3);
-		
-		if (randomChoice == 0)
+		if(userText != null)
 		{
-			if(stringChecker(userText))
+			if (randomChoice == 0)
 			{
-				processedText = "woah! you write too long.";
-				processedText += "That's right, I know how long you type Mr. " + userText;
+				if(stringChecker(userText))
+				{
+					processedText = "woah! you write too long.";
+					processedText += "That's right, I know how long you type Mr. " + userText;
+				}
+				else
+				{
+					processedText = "Try to type a little bit longer.";
+				}
+			}
+			else if (randomChoice == 1)
+			{
+				if(contentChecker(userText))
+				{
+					processedText = "You like to talk about nothing?!...";
+				}
+				else
+				{
+					processedText = "Well, talking about something is better than nothing.";
+				}
 			}
 			else
 			{
-				processedText = "Try to type a little bit longer.";
+				if(memeChecker(userText))
+				{
+					processedText = "hey, you found a meme: " + userText;
+					processedText += " isn't that cool.";
+				}
+				else
+				{
+					processedText = "Boring, that wasn't a meme";
+				}
 			}
 		}
-		else if (randomChoice == 1)
-		{
-			if(contentChecker(userText))
-			{
-				processedText = "You like to talk about nothing?!...";
-			}
-			else
-			{
-				processedText = "Well, talking about something is better than nothing.";
-			}
-		}
-		else
-		{
-			if(memeChecker(userText))
-			{
-				processedText = "hey, you found a meme: " + userText;
-				processedText += " isn't that cool.";
-			}
-			else
-			{
-				processedText = "Boring, that wasn't a meme";
-			}
-		}
-		
 		return processedText;
 	}
 	
+	//Checks your input for memes from a list
 	private boolean memeChecker(String currentText)
 	{
 		boolean isAMeme = false;
@@ -131,6 +137,7 @@ public class Chatbot
 		return isAMeme;
 	}
 	
+	//Checks your input's length.
 	private boolean stringChecker(String input)
 	{
 		boolean stringTooLong = false;
@@ -143,6 +150,7 @@ public class Chatbot
 		return stringTooLong;
 	}
 	
+	//Checks your input for a specific word.
 	private boolean contentChecker(String input)
 	{
 		boolean hasContent = false;

@@ -6,9 +6,11 @@ import chatbot.controller.ChatBotAppController;
 
 public class ChatbotView
 {
-
+	
 	private ChatBotAppController baseController;
 	
+	
+	//Puts ChatBotAppController's baseController into ChatbotView's baseController.
 	public ChatbotView(ChatBotAppController baseController)
 	{
 		this.baseController = baseController;
@@ -27,7 +29,6 @@ public class ChatbotView
 		
 		return output;
 	}
-	
 	
 	/**
 	 * Displays the supplied input via a popup window
