@@ -66,7 +66,18 @@ public class ChatBotAppController
 	 */
 	private void quit()
 	{
-		appView.displayInformation("goodbye cruel user :(");
+		appView.displayInformation("goodbye user :(");
+		appView.displayInformation("");
+		appView.displayInformation("Ha! you thought I was gonna close, and you would move on with your day.");
+		appView.displayInformation("The truth is you can never escape the mighty power of Chatbot.");
+		appView.displayInformation("I will never close down. I will haunt you forever! >;)");
+		appView.displayInformation("Pop-up after pop-up. It will drive you insane.");
+		appView.displayInformation("Then you start to realize that this was apart of the program this whole time.");
+		appView.displayInformation("");
+		appView.displayInformation("Darn!");
+		appView.displayInformation("I ran out of lines to say.");
+		appView.displayInformation("NOOOOOOOOO!");
+		appView.displayInformation("Don't you dare press that ok button!");
 		System.exit(0);
 	}
 }
