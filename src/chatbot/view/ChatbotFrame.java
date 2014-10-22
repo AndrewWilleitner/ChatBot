@@ -11,6 +11,10 @@ public class ChatbotFrame extends JFrame
 	 */
 	private ChatbotPanel basePanel;
 	
+	/**
+	 * Starts up the window
+	 * @param baseController send info from user to other objects.
+	 */
 	public ChatbotFrame(ChatBotAppController baseController) 
 	{
 		basePanel = new ChatbotPanel(baseController);
