@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import chatbot.controller.ChatBotAppController;
+import java.awt.Font;
 
 public class ChatbotPanel extends JPanel
 {
@@ -28,17 +29,27 @@ public class ChatbotPanel extends JPanel
 	{
 		this.baseController = baseController;
 		sampleButton = new JButton("click on me please :D");
+		sampleButton.setForeground(Color.WHITE);
+		sampleButton.setBackground(Color.BLACK);
+		sampleButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
 		sampleField = new JTextField(25);
+		sampleField.setForeground(Color.GREEN);
+		sampleField.setBackground(Color.BLACK);
+		sampleField.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
 		chatArea = new JTextArea(5, 25);
+		chatArea.setBackground(Color.BLACK);
+		chatArea.setForeground(Color.ORANGE);
+		chatArea.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
 		chatPane = new JScrollPane(chatArea);
 		
 		baseLayout = new SpringLayout();
-		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, 246, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, sampleField, 0, SpringLayout.WEST, chatPane);
-		baseLayout.putConstraint(SpringLayout.SOUTH, sampleField, -6, SpringLayout.NORTH, sampleButton);
-		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 65, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 100, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 30, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, sampleField, 19, SpringLayout.SOUTH, chatPane);
+		baseLayout.putConstraint(SpringLayout.WEST, chatPane, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatPane, 0, SpringLayout.EAST, sampleField);
+		baseLayout.putConstraint(SpringLayout.NORTH, sampleButton, 20, SpringLayout.SOUTH, sampleField);
+		baseLayout.putConstraint(SpringLayout.EAST, sampleField, 360, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, sampleField, 10, SpringLayout.WEST, this);
 		
 		setupScrollPane();
 		setupPanel();
@@ -57,12 +68,21 @@ public class ChatbotPanel extends JPanel
 	 */
 	private void setupPanel()
 	{
-		this.setBackground(Color.GREEN);
+		this.setBackground(Color.BLACK);
 		this.setLayout(baseLayout);
 		
 		this.add(sampleButton);
 		this.add(sampleField);
 		this.add(chatPane);
+		
+		JLabel lblChtBt = new JLabel("Ch@t bot ai v2.0");
+		baseLayout.putConstraint(SpringLayout.NORTH, chatPane, 20, SpringLayout.SOUTH, lblChtBt);
+		baseLayout.putConstraint(SpringLayout.NORTH, lblChtBt, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, lblChtBt, 47, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, lblChtBt, -103, SpringLayout.EAST, this);
+		lblChtBt.setForeground(Color.CYAN);
+		lblChtBt.setFont(new Font("Quartz MS", Font.PLAIN, 32));
+		add(lblChtBt);
 	}
 	
 	/**
@@ -86,5 +106,4 @@ public class ChatbotPanel extends JPanel
 		});
 		
 	}
-	
 }
