@@ -15,12 +15,10 @@ public class ChatBotAppController
 	 * The GUI view for the application
 	 */
 	private ChatbotView appView;
-	
 	/**
 	 * The Chatbot model instance.
 	 */
 	private Chatbot notSoCleverBot;
-	
 	/**
 	 * The startup message for Chatbot.
 	 */

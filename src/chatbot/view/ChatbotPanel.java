@@ -16,10 +16,12 @@ public class ChatbotPanel extends JPanel
 	 */
 	private ChatBotAppController baseController;
 	private JButton sampleButton;
+	private JButton logoButton;
 	private JTextField sampleField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	private SpringLayout baseLayout;
+
 	
 	/**
 	 * This sets all the values to the variables.
@@ -27,6 +29,7 @@ public class ChatbotPanel extends JPanel
 	 */
 	public ChatbotPanel(ChatBotAppController baseController)
 	{
+
 		this.baseController = baseController;
 		sampleButton = new JButton("click on me please :D");
 		sampleButton.setForeground(Color.WHITE);
@@ -50,7 +53,6 @@ public class ChatbotPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, sampleField, 360, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, sampleButton, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, sampleField, 10, SpringLayout.WEST, this);
-		
 		setupScrollPane();
 		setupPanel();
 		setupLayout();
@@ -83,6 +85,17 @@ public class ChatbotPanel extends JPanel
 		lblChtBt.setForeground(Color.CYAN);
 		lblChtBt.setFont(new Font("Quartz MS", Font.PLAIN, 32));
 		add(lblChtBt);
+		
+		logoButton = new JButton("No, click on me!");
+		logoButton.setForeground(Color.WHITE);
+		logoButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
+		logoButton.setBackground(Color.BLACK);
+		baseLayout.putConstraint(SpringLayout.NORTH, logoButton, 0, SpringLayout.NORTH, sampleButton);
+		baseLayout.putConstraint(SpringLayout.WEST, logoButton, 17, SpringLayout.EAST, sampleButton);
+		add(logoButton);
+		
+
+		
 	}
 	
 	/**
@@ -90,6 +103,7 @@ public class ChatbotPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
+	
 	}
 	
 	/**
@@ -102,6 +116,14 @@ public class ChatbotPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				sampleField.setText(sampleField.getText() + " :O much wow");
+			}
+		});
+		
+		logoButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				chatArea.setText(chatArea.getText() + "iewhafuepniawfgbeai");
 			}
 		});
 		
