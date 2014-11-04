@@ -31,7 +31,7 @@ public class ChatbotPanel extends JPanel
 	{
 
 		this.baseController = baseController;
-		sampleButton = new JButton("click on me please :D");
+		sampleButton = new JButton("Enter");
 		sampleButton.setForeground(Color.WHITE);
 		sampleButton.setBackground(Color.BLACK);
 		sampleButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
@@ -86,7 +86,7 @@ public class ChatbotPanel extends JPanel
 		lblChtBt.setFont(new Font("Quartz MS", Font.PLAIN, 32));
 		add(lblChtBt);
 		
-		logoButton = new JButton("No, click on me!");
+		logoButton = new JButton("SING!");
 		logoButton.setForeground(Color.WHITE);
 		logoButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
 		logoButton.setBackground(Color.BLACK);
@@ -115,7 +115,12 @@ public class ChatbotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				sampleField.setText(sampleField.getText() + " :O much wow");
+				String userTypedText = sampleField.getText();
+				String chatbotResponse = baseController.sendTextToChatBot(userTypedText);
+				displayTextToUser(userTypedText);
+				displayTextToUser(chatbotResponse);
+				sampleField.setText("");
+				
 			}
 		});
 		
@@ -123,9 +128,14 @@ public class ChatbotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				chatArea.setText(chatArea.getText() + "iewhafuepniawfgbeai");
+				chatArea.setText(chatArea.getText() + "\n" + "----------------" + "\n" + "This was a triumph." + "\n" + "Im making a note here, HUGE SUCCESS!" + "\n" + "Its hard to over state my satifaction." + "\n" + "Aperture Science." + "\n" + "We do what we must, because we can." + "\n" + "For the good of all of us," + "\n" + "(Except the ones that are dead)." + "\n" + "\n" + "But there's no sense crying over every mistake." + "\n" + "You just keep on trying 'til you run out of cake." + "\n" + "Then the science gets done," + "\n" + "and you make a neat gun," + "\n" + "for the people who are" + "\n" + "STILL ALIVE!" + "\n" + "----------------");
 			}
 		});
 		
+	}
+
+	public void displayTextToUser(String input)
+	{
+		chatArea.append("\n" + input);
 	}
 }

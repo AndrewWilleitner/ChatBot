@@ -3,11 +3,12 @@ package chatbot.controller;
 
 import chatbot.model.Chatbot;
 import chatbot.view.ChatbotFrame;
+import chatbot.view.ChatbotPanel;
 import chatbot.view.ChatbotView;
 /**
  * Application Controller for the Chatbot String manipulation project. Responsible for controlling the View and Model packages.
  * @author Andrew Willeitner
- * @version 0.1 10/1/14
+ * @version 2.1 11/4/14 adjusted buttons and chatbot talks to you.
  */
 public class ChatBotAppController
 {
@@ -35,8 +36,8 @@ public class ChatBotAppController
 	{
 		appView = new ChatbotView(this);
 		baseFrame = new ChatbotFrame(this);
-		notSoCleverBot = new Chatbot("Mr. not so clever");
-		startMessage = "Welcome to the " + notSoCleverBot.getName() + " Chatbot, type in your name.";
+		notSoCleverBot = new Chatbot("Aperture Science Chatbot Program");
+		startMessage = "Welcome to the " + notSoCleverBot.getName() + ". Please enter your name, test subject.";
 	}
 	
 	/**
@@ -52,18 +53,19 @@ public class ChatBotAppController
 	 * Start the Chatbot Application.
 	 */
 	public void start()
+	{	
+		ChatbotPanel myAppPanel = (ChatbotPanel) baseFrame.getContentPane();
+		myAppPanel.displayTextToUser(startMessage);
+		
+		//((ChatbotPanel) baseFrame.getContentPane()).displayTextToUser(startMessage);			
+	}
+	
+	public String sendTextToChatBot(String userInput)
 	{
-		String message = appView.displayChatbotConversations(startMessage);
+		String respondText = "";
 		
-		// ! means not
-//		while(!notSoCleverBot.quitChecker(message))
-//		{
-//			message = notSoCleverBot.processText(message);
-//			message = appView.displayChatbotConversations(message);
-//		}
-//		
-//		quit();
-		
+		respondText = notSoCleverBot.processText(userInput);
+		return respondText;
 	}
 	
 	/**
@@ -76,16 +78,16 @@ public class ChatBotAppController
 		appView.displayInformation("Ha! you thought I was gonna close, and you would move on with your day.");
 		appView.displayInformation("The truth is you can never escape the mighty power of Chatbot.");
 		appView.displayInformation("I will never close down. I will haunt you forever! >;)");
-		appView.displayInformation("Pop-up after pop-up. It will drive you insane.");
+		appView.displayInformation("Line after line. It will drive you insane.");
 		appView.displayInformation("Then you start to realize that this was apart of the program this whole time.");
 		appView.displayInformation("");
 		appView.displayInformation("Darn!");
 		appView.displayInformation("I'm running out of lines to say.");
 		appView.displayInformation("NOOOOOOOOO!");
-		appView.displayInformation("Don't you dare press that ok button!");
-		appView.displayInformation("LONG LIVE THE CHATBOT!");
-		appView.displayInformation("LONG LIVE THE CHATBOT!");
-		appView.displayInformation("LONG LIVE THE CHAT...");
+		appView.displayInformation("Don't you dare press that button!");
+		appView.displayInformation("LONG LIVE CHATBOT!");
+		appView.displayInformation("LONG LIVE CHATBOT!");
+		appView.displayInformation("LONG LIVE CHAT...");
 		System.exit(0);
 	}
 }
