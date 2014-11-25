@@ -37,7 +37,7 @@ public class ChatBotAppController
 		appView = new ChatbotView(this);
 		baseFrame = new ChatbotFrame(this);
 		notSoCleverBot = new Chatbot("Aperture Science Chatbot Program");
-		startMessage = "Welcome to the " + notSoCleverBot.getName() + ". Please enter your name, test subject.";
+		startMessage = "Welcome to the " + notSoCleverBot.getName() + ". Please enter your test subject ID name.";
 	}
 	
 	/**
@@ -71,23 +71,9 @@ public class ChatBotAppController
 	/**
 	 * Quits the application with a message.
 	 */
-	private void quit()
+	public void quit()
 	{
 		appView.displayInformation("goodbye user :(");
-		appView.displayInformation("");
-		appView.displayInformation("Ha! you thought I was gonna close, and you would move on with your day.");
-		appView.displayInformation("The truth is you can never escape the mighty power of Chatbot.");
-		appView.displayInformation("I will never close down. I will haunt you forever! >;)");
-		appView.displayInformation("Line after line. It will drive you insane.");
-		appView.displayInformation("Then you start to realize that this was apart of the program this whole time.");
-		appView.displayInformation("");
-		appView.displayInformation("Darn!");
-		appView.displayInformation("I'm running out of lines to say.");
-		appView.displayInformation("NOOOOOOOOO!");
-		appView.displayInformation("Don't you dare press that button!");
-		appView.displayInformation("LONG LIVE CHATBOT!");
-		appView.displayInformation("LONG LIVE CHATBOT!");
-		appView.displayInformation("LONG LIVE CHAT...");
 		System.exit(0);
 	}
 }
