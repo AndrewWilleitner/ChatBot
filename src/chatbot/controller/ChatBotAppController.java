@@ -8,7 +8,7 @@ import chatbot.view.ChatbotView;
 /**
  * Application Controller for the Chatbot String manipulation project. Responsible for controlling the View and Model packages.
  * @author Andrew Willeitner
- * @version 2.1 11/4/14 adjusted buttons and chatbot talks to you.
+ * @version 2.8 12/3/14 chatbot talks to you.
  */
 public class ChatBotAppController
 {
@@ -36,8 +36,8 @@ public class ChatBotAppController
 	{
 		appView = new ChatbotView(this);
 		baseFrame = new ChatbotFrame(this);
-		notSoCleverBot = new Chatbot("Aperture Science Chatbot Program");
-		startMessage = "Welcome to the " + notSoCleverBot.getName() + ". Please enter your test subject ID name.";
+		notSoCleverBot = new Chatbot("Chatbot");
+		startMessage = "Welcome to the Aperture Science " + notSoCleverBot.getName() + " Program. Please enter your test subject ID name.";
 	}
 	
 	/**
