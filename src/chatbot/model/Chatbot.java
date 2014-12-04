@@ -6,6 +6,9 @@ import chatbot.view.ChatbotView;
 
 public class Chatbot
 {
+	/**
+	 * declaration section
+	 */
 	private String name;
 	private int numberOfChats;
 	private ArrayList<String> memeList;
@@ -28,7 +31,10 @@ public class Chatbot
 		myUser = new User();
 	}
 
-	//returns the name of Chatbot.
+	/**
+	 * returns the name of Chatbot.
+	 * @return
+	 */
 	public String getName()
 	{
 		return name;
@@ -183,6 +189,11 @@ public class Chatbot
 		return processedText;
 	}
 	
+	/**
+	 * Counts the user's input.
+	 * @param input
+	 * @return
+	 */
 	private boolean userInputChecker(String input)
 	{
 		boolean matchesInput = false;
@@ -291,6 +302,11 @@ public class Chatbot
 		return okToQuit;
 	}
 
+	/**
+	 * What chatbot says when the user types chatbot's name.
+	 * @param currentInput
+	 * @return
+	 */
 	private String chatbotNameConversation(String currentInput)
 	{
 		String nameConversation = "This is what you typed after my name: ";
@@ -300,6 +316,11 @@ public class Chatbot
 		return nameConversation;
 	}
 	
+	/**
+	 * When you don't say chatbot's name.
+	 * @param currentInput
+	 * @return
+	 */
 	private String noNameConversation(String currentInput)
 	{
 		String notNamed = "";

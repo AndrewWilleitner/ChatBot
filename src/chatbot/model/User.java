@@ -2,10 +2,16 @@ package chatbot.model;
 
 public class User
 {
+	/**
+	 * declaration section
+	 */
 	private int userAge;
 	private String userName;
 	private String favoriteColor;
 	
+	/**
+	 * These methods gather the info about the user.
+	 */
 	public User()
 	{
 		this.userName = "";

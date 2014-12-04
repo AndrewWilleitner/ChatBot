@@ -6,11 +6,16 @@ import chatbot.controller.ChatBotAppController;
 
 public class ChatbotView
 {
-	
+	/**
+	 * declaration section
+	 */
 	private ChatBotAppController baseController;
 	
 	
-	//Puts ChatBotAppController's baseController into ChatbotView's baseController.
+	/**
+	 * Puts ChatBotAppController's baseController into ChatbotView's baseController.
+	 * @param baseController
+	 */
 	public ChatbotView(ChatBotAppController baseController)
 	{
 		this.baseController = baseController;

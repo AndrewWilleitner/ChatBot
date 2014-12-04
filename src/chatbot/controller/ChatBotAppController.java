@@ -8,7 +8,7 @@ import chatbot.view.ChatbotView;
 /**
  * Application Controller for the Chatbot String manipulation project. Responsible for controlling the View and Model packages.
  * @author Andrew Willeitner
- * @version 2.8 12/3/14 chatbot talks to you.
+ * @version 2.9 12/4/14 chatbot talks to you. and I finished the documentation.
  */
 public class ChatBotAppController
 {
@@ -60,6 +60,11 @@ public class ChatBotAppController
 		//((ChatbotPanel) baseFrame.getContentPane()).displayTextToUser(startMessage);			
 	}
 	
+	/**
+	 * Sends text to chatbot.
+	 * @param userInput
+	 * @return
+	 */
 	public String sendTextToChatBot(String userInput)
 	{
 		String respondText = "";

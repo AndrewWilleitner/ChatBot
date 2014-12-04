@@ -60,6 +60,9 @@ public class ChatbotPanel extends JPanel
 		setupListeners();
 	}
 	
+	/**
+	 * sets up scrolling in the chat area.
+	 */
 	private void setupScrollPane()
 	{
 		chatArea.setLineWrap(true);
@@ -129,12 +132,16 @@ public class ChatbotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				chatArea.setText(chatArea.getText() + "\n" + "--------------------" + "\n" + "This was a triumph." + "\n" + "Im making a note here, HUGE SUCCESS!" + "\n" + "Its hard to over state my satifaction." + "\n" + "Aperture Science." + "\n" + "We do what we must, because we can." + "\n" + "For the good of all of us," + "\n" + "(Except the ones who are dead)." + "\n" + "\n" + "But there's no sense crying over every mistake." + "\n" + "You just keep on trying 'til you run out of cake." + "\n" + "Then the science gets done," + "\n" + "and you make a neat gun," + "\n" + "for the people who are" + "\n" + "STILL ALIVE!" + "\n" + "--------------------");
+				chatArea.setText(chatArea.getText() + "\n" + "--------------------" + "\n" + "This was a triumph." + "\n" + "Im making a note here, HUGE SUCCESS!" + "\n" + "Its hard to over state my satifaction." + "\n" + "Aperture Science." + "\n" + "We do what we must, because we can." + "\n" + "For the good of all of us," + "\n" + "(Except the ones that are dead)." + "\n" + "\n" + "But there's no sense crying over every mistake." + "\n" + "You just keep on trying 'til you run out of cake." + "\n" + "Then the science gets done," + "\n" + "and you make a neat gun," + "\n" + "for the people who are" + "\n" + "STILL ALIVE!" + "\n" + "--------------------");
 			}
 		});
 		
 	}
 
+	/**
+	 * Displays text in chatArea.
+	 * @param input
+	 */
 	public void displayTextToUser(String input)
 	{
 		chatArea.append("\n" + input);
