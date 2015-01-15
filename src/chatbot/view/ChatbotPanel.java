@@ -17,6 +17,8 @@ public class ChatbotPanel extends JPanel
 	private ChatBotAppController baseController;
 	private JButton sampleButton;
 	private JButton logoButton;
+	private JButton saveButton;
+	private JButton loadButton;
 	private JTextField sampleField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
@@ -98,6 +100,22 @@ public class ChatbotPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, logoButton, 17, SpringLayout.EAST, sampleButton);
 		add(logoButton);
 		
+		JButton saveButton = new JButton("Save");
+		saveButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
+		saveButton.setForeground(Color.WHITE);
+		saveButton.setBackground(Color.BLACK);
+		baseLayout.putConstraint(SpringLayout.NORTH, saveButton, 6, SpringLayout.SOUTH, sampleButton);
+		baseLayout.putConstraint(SpringLayout.WEST, saveButton, 0, SpringLayout.WEST, sampleButton);
+		add(saveButton);
+		
+		JButton loadButton = new JButton("Load");
+		loadButton.setForeground(Color.WHITE);
+		loadButton.setBackground(Color.BLACK);
+		loadButton.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
+		baseLayout.putConstraint(SpringLayout.WEST, loadButton, 0, SpringLayout.WEST, logoButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, loadButton, 0, SpringLayout.SOUTH, saveButton);
+		add(loadButton);
+		
 
 		
 	}
@@ -135,6 +153,31 @@ public class ChatbotPanel extends JPanel
 				chatArea.setText(chatArea.getText() + "\n" + "--------------------" + "\n" + "This was a triumph." + "\n" + "Im making a note here, HUGE SUCCESS!" + "\n" + "Its hard to over state my satifaction." + "\n" + "Aperture Science." + "\n" + "We do what we must, because we can." + "\n" + "For the good of all of us," + "\n" + "(Except the ones that are dead)." + "\n" + "\n" + "But there's no sense crying over every mistake." + "\n" + "You just keep on trying 'til you run out of cake." + "\n" + "Then the science gets done," + "\n" + "and you make a neat gun," + "\n" + "for the people who are" + "\n" + "STILL ALIVE!" + "\n" + "--------------------");
 			}
 		});
+		
+//		saveButton.addActionListener(new ActionListener()
+//		{
+//			public void actionPerformed(ActionEvent click)
+//			{
+//				String chat = chatArea.getText();
+//				baseController.saveText(chat, true);
+//			}
+//		});
+		
+//		loadButton.addActionListener(new ActionListener()
+//		{
+//			public void actionPerformed(ActionEvent click)
+//			{
+//				String savedChat = baseController.readTextFromFile();
+//				if(savedChat.length()<1)
+//				{
+//					chatArea.setText("no text in file");
+//				}
+//				else
+//				{
+//					chatArea.setText(savedChat);
+//				}
+//			}
+//		});
 		
 	}
 
